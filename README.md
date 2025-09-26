@@ -58,7 +58,7 @@ sudo systemctl enable hostapd
 Step 3: Configure /etc/network/interfaces
 Edit the file:
 
-bash
+```bash
 sudo nano /etc/network/interfaces
 Add this configuration:
 
@@ -73,10 +73,12 @@ auto wlan0
 iface wlan0 inet static
   address 192.168.50.1
   netmask 255.255.255.0
-🔧 Step 4: Restart Networking
-bash
-sudo ifdown wlan0 && sudo ifup wlan0
+```
 
+🔧 Step 4: Restart Networking
+```bash
+sudo ifdown wlan0 && sudo ifup wlan0
+```
 ---
 
 ### 3. Configure `hostapd` (Wi-Fi Access Point)
@@ -141,7 +143,7 @@ Download blocklist:
 ```bash
 curl -s https://raw.githubusercontent.com/notracking/hosts-blocklists/master/dnscrypt-proxy/dns-blocklist.txt -o /etc/dns-blocklist.txt
 ```
-Find other NDS list at [https://github.com/hagezi/dns-blocklists](https://github.com/hagezi/dns-blocklists)
+Find other DNS list at [https://github.com/hagezi/dns-blocklists](https://github.com/hagezi/dns-blocklists)
 ---
 
 ### 5. Enable IP Forwarding
@@ -227,27 +229,4 @@ Add:
 
 ---
 
-## 🧠 Notes
-
-- This setup uses `/etc/hosts`-style DNS blocking via `dnsmasq`
-- You can swap in other blocklists or add custom entries
-- For advanced filtering, consider integrating `Unbound` or `dnscrypt-proxy`
-
----
-
-## 📜 License
-
-MIT License. Feel free to fork, modify, and share!
-
----
-
-## 🙌 Credits
-
-Blocklist sourced from [notracking/hosts-blocklists](https://github.com/notracking/hosts-blocklists)
-
----
-
-## 💬 Questions or Contributions?
-
-Open an issue or submit a pull request. Happy hacking!
 
