@@ -1,7 +1,4 @@
 
----
-
-```markdown
 # Autonomous DNS-Filtering Wi-Fi Hotspot (Ad Blocker)
 
 This guide explains how to turn your ARM-based Ubuntu server into a **self-contained Wi-Fi hotspot** with **DNS filtering** to block ads, trackers, and unwanted services—without needing Pi-hole or router reconfiguration.
