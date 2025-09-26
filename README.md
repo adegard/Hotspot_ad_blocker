@@ -252,8 +252,4 @@ Blocklist sourced from [notracking/hosts-blocklists](https://github.com/notracki
 ## 💬 Questions or Contributions?
 
 Open an issue or submit a pull request. Happy hacking!
-```
 
----
-
-Let me know if you'd like this split into multiple files or styled for GitHub Pages. I can also help you add badges, screenshots, or a demo video link.
