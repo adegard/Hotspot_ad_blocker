@@ -70,15 +70,11 @@ network:
   ethernets:
     eth0:
       dhcp4: true
-  bridges:
-    br0:
-      interfaces: [eth0]
-      dhcp4: true
   wifis:
     wlan0:
-      access-points: {}
       dhcp4: no
       addresses: [192.168.50.1/24]
+
 
 ```
 
