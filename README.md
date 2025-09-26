@@ -39,8 +39,8 @@ This guide explains how to turn your ARM-based Ubuntu server into a **self-conta
 ```bash
 sudo apt update
 sudo apt install hostapd dnsmasq iptables curl
+sudo apt install ifupdown
 
-sudo apt install netplan.io
 
 ```
 
@@ -55,34 +55,27 @@ sudo systemctl enable hostapd
 
 ### 2. Configure Static IP for Wi-Fi Interface
 
-Edit Netplan config:
+Step 3: Configure /etc/network/interfaces
+Edit the file:
 
-```bash
-sudo nano /etc/netplan/01-network.yaml
-```
+bash
+sudo nano /etc/network/interfaces
+Add this configuration:
 
-paste:
+ini
+auto lo
+iface lo inet loopback
 
-```yaml
-network:
-  version: 2
-  renderer: networkd
-  ethernets:
-    eth0:
-      dhcp4: true
-  wifis:
-    wlan0:
-      dhcp4: no
-      addresses: [192.168.50.1/24]
+auto eth0
+iface eth0 inet dhcp
 
-
-```
-
-Apply changes:
-
-```bash
-sudo netplan apply
-```
+auto wlan0
+iface wlan0 inet static
+  address 192.168.50.1
+  netmask 255.255.255.0
+🔧 Step 4: Restart Networking
+bash
+sudo ifdown wlan0 && sudo ifup wlan0
 
 ---
 
