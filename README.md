@@ -61,7 +61,7 @@ Edit Netplan config:
 sudo nano /etc/netplan/01-network.yaml
 ```
 
-Example:
+paste:
 
 ```yaml
 network:
@@ -70,10 +70,16 @@ network:
   ethernets:
     eth0:
       dhcp4: true
+  bridges:
+    br0:
+      interfaces: [eth0]
+      dhcp4: true
   wifis:
     wlan0:
-      addresses: [192.168.50.1/24]
+      access-points: {}
       dhcp4: no
+      addresses: [192.168.50.1/24]
+
 ```
 
 Apply changes:
