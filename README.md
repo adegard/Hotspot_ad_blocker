@@ -141,7 +141,7 @@ Download blocklist:
 ```bash
 curl -s https://raw.githubusercontent.com/notracking/hosts-blocklists/master/dnscrypt-proxy/dns-blocklist.txt -o /etc/dns-blocklist.txt
 ```
-
+Find other NDS list at [https://github.com/hagezi/dns-blocklists](https://github.com/hagezi/dns-blocklists)
 ---
 
 ### 5. Enable IP Forwarding
