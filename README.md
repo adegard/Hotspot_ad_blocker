@@ -39,6 +39,9 @@ This guide explains how to turn your ARM-based Ubuntu server into a **self-conta
 ```bash
 sudo apt update
 sudo apt install hostapd dnsmasq iptables curl
+
+sudo apt install netplan.io
+
 ```
 
 Enable services:
